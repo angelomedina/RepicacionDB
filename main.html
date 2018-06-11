@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body onload="setDatos()">
+<body onload="inputsIniciales()">
 
 <!--login SQL-->
 <div class="card text-white bg-primary mb-3" style="max-width: 500rem;">
@@ -30,9 +30,6 @@
         <div class="card-body">
 
             <div class="card-block">
-                <div class="contenido">
-                    <form  id="contenidoI" >
-
 
                         <div class="col-xs-10">
                             <h5 class="col-xs-3" class="card-title">Usuario</h5>
@@ -50,10 +47,9 @@
                             <h5 class="col-xs-3" class="card-title">Puerto</h5>
                             <input type="number" class="form-control form-control-lg" id="puertoServidor" required ><br>
                         </div>
-                    </form>
 
-                    <a  target="_self"  class="col-xs-10"> <input class="btn btn-primary" type="submit" id="btn_postgres" value="postgres" onclick="conexion()"/> </a><br><br>
-                </div>
+                    <a  target="_self"  class="col-xs-10"> <input class="btn btn-primary" type="submit" id="btn_origen" value="postgres" onclick="conexionOrigen()"/> </a><br><br>
+
 
             </div>
         </div>
@@ -77,7 +73,7 @@
                 </select><br>
             </div>
 
-            <a  target="_self" > <input class="btn btn-danger" type="submit" id="btn-db" value="Selecionar" onclick="setDB()" /> </a><br>
+            <a  target="_self" > <input class="btn btn-danger" type="submit" id="btn-db" value="Selecionar" onclick="conexionDBorigen()" /> </a><br><br><br>
 
         </div>
     </div>
@@ -88,9 +84,6 @@
         <div class="card-body">
 
             <div class="card-block">
-                <div class="contenido">
-                    <form  id="contenidoII" >
-
 
                         <div class="col-xs-10">
                             <h5 class="col-xs-3" class="card-title">Usuario</h5>
@@ -110,12 +103,10 @@
                         </div>
                         <div class="col-xs-10">
                             <h5 class="col-xs-3" class="card-title">DB</h5>
-                            <input type="text" class="form-control form-control-lg" id="baseD" name="dbD"required ><br>
+                            <input type="text" class="form-control form-control-lg" id="baseD" name="baseD"required ><br>
                         </div>
-                    </form>
 
-                    <a  target="_self"  class="col-xs-10"> <input class="btn btn-primary" type="submit"  value="postgres" /> </a><br><br>
-                </div>
+                         <a  target="_self"  class="col-xs-10"> <input class="btn btn-primary" type="submit" id="btn_destino" value="postgres" onclick="conexionDestino()"/> </a><br><br>
 
             </div>
         </div>
