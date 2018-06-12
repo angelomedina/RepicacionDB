@@ -233,6 +233,7 @@ function columnasTablas(){
                     if(this.statusText== "OK" && this.status == 200) {
 
                         var columnas = "";
+                        var values = "";
 
                         var json = this.response;
                         var arr = JSON.parse(json);
@@ -245,12 +246,19 @@ function columnasTablas(){
 
                                 var value = obj[key];
                                 columnas = columnas + " " + value;
+
+                                if(key.toString() == "column_name"){
+
+                                    values   = values   + " " + value;
+                                }
                             }
                             columnas = columnas + ",";
+                            values = values + ",";
                         }
                         columnas = columnas.substring(0,columnas.length-1);
+                        values = values.substring(0,values.length-1);
 
-                        crearTabla(tabla, columnas);
+                        crearTabla(tabla, columnas,values);
                     }
                     else{console.log(this.statusText, this.status)}
                 }
@@ -263,7 +271,7 @@ function columnasTablas(){
     });
 }
 
-function crearTabla(tabla, columnas) {
+function crearTabla(tabla, columnas, values) {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -277,6 +285,8 @@ function crearTabla(tabla, columnas) {
                         title: "Cracion de tablas!",
                         text:  "Tabla: "+tabla,
                     });
+
+                    datosTabla(tabla, values);
 
                 }else{
                     swal({
@@ -294,3 +304,84 @@ function crearTabla(tabla, columnas) {
     xhttp.send();
 }
 
+function datosTabla(tabla, Values) {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                if(this.response.toString() != "error") {
+
+                    if(this.response.toString() != "false"){
+
+                        var values = "";
+
+                        var json = this.response;
+                        var arr = JSON.parse(json);
+
+                        for (var i = 0; i < arr.length; i++){
+
+                            var obj = arr[i];
+
+                            for (var key in obj){
+
+                                var value = obj[key];
+
+                                if(value != null) {
+                                    values = values + "" + "'" + value + "'" + ",";
+                                }
+
+                            }
+                            values = values.substring(0,values.length-1);
+
+                            insertarDatosTabla(tabla,Values ,values);
+
+                            values = "";
+                        }
+                    }
+
+                }else{
+                    swal({
+                        title: "Error de replicacion de tablas!",
+                        text:  "Verifique los datos ingresados!",
+                        icon: "warning",
+                        button: "OK!",
+                    });
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=datosTabla()&usuario="+Gusuario+"&contraseña="+Gcontraseña+"&ip="+GIP+"&puerto="+Gpuerto+"&bd="+Gdb+"&tabla="+tabla.toString()+"&columnas="+Values.toString(), true);
+    xhttp.send();
+}
+
+function insertarDatosTabla(tabla, Values,values) {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                if(this.response.toString() != "error") {
+
+                    console.log(this.response);
+
+                }else{
+                    swal({
+                        title: "Error de replicacion de tablas!",
+                        text:  "Verifique los datos ingresados!",
+                        icon: "warning",
+                        button: "OK!",
+                    });
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=insertarDatosTabla()&usuario="+Dusuario+"&contraseña="+Dcontraseña+"&ip="+DIP+"&puerto="+Dpuerto+"&bd="+Ddb+"&tabla="+tabla.toString()+"&Values="+Values.toString()+"&values="+values.toString(), true);
+    xhttp.send();
+}

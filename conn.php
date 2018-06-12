@@ -25,6 +25,17 @@ if ($_GET['func']=='crearTablas()')
     crearTablas($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla'],$_GET['columnas']);
 }
 
+if ($_GET['func']=='datosTabla()')
+{
+    datosTabla($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla'],$_GET['columnas']);
+}
+
+if ($_GET['func']=='insertarDatosTabla()')
+{
+    insertarDatosTabla($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla'],$_GET['Values'],$_GET['values']);
+}
+
+
 
 function conectarOrigen($usuario, $contraseña, $ip, $puerto){
     $dbname          = "postgres";
@@ -142,6 +153,53 @@ function crearTablas($usuario, $contraseña, $ip, $puerto, $bd,$tabla,$columnas)
         echo "error";
     }else{
         $sql = "CREATE TABLE $tabla ($columnas);";
+        $contests = pg_query( $conexion, $sql );
+
+        if($contests ){
+
+            echo "exito";
+            pg_close($conexion);
+
+        }else{
+            echo "error";
+        }
+    }
+}
+
+function datosTabla($usuario, $contraseña, $ip, $puerto, $bd,$tabla, $columnas){
+    $dbname          =  $bd;
+    $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
+
+    if( !$conexion) {
+        echo "error";
+    }else{
+        $sql = "select $columnas from $tabla";
+        $contests = pg_query( $conexion, $sql );
+
+        if($contests ){
+
+            $resultArray = pg_fetch_all($contests);
+            echo json_encode($resultArray);
+            pg_close($conexion);
+
+        }else{
+            echo "error";
+        }
+    }
+}
+
+function insertarDatosTabla($usuario, $contraseña, $ip, $puerto, $bd,$tabla,$Values,$values){
+
+    $dbname          =  $bd;
+    $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
+
+    if( !$conexion) {
+        echo "error";
+    }else{
+
+
+        $sql = "INSERT INTO $tabla ($Values) VALUES ($values);";
+
         $contests = pg_query( $conexion, $sql );
 
         if($contests ){

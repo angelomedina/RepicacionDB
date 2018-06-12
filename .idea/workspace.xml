@@ -16,12 +16,12 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="-119">
+              <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="method.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="method.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/method.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="216" column="25" lean-forward="false" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+            <state relative-caret-position="358">
+              <caret line="331" column="48" lean-forward="false" selection-start-line="331" selection-start-column="48" selection-end-line="331" selection-end-column="48" />
               <folding>
                 <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
                 <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
@@ -46,36 +46,45 @@
                 <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
                 <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
                 <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
-                <element signature="e#7087#8341#0" expanded="false" />
-                <element signature="n#!!block;n#crearTabla#0" expanded="false" />
+                <element signature="n#!!block;n#insertarDatosTabla#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conn.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="conn.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="127" column="3" lean-forward="true" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="3" />
+            <state relative-caret-position="562">
+              <caret line="190" column="93" lean-forward="false" selection-start-line="190" selection-start-column="93" selection-end-line="190" selection-end-column="93" />
               <folding>
                 <element signature="e#7#135#0#PHP" expanded="false" />
                 <element signature="e#137#281#0#PHP" expanded="false" />
                 <element signature="e#283#429#0#PHP" expanded="false" />
                 <element signature="e#431#586#0#PHP" expanded="false" />
+                <element signature="e#588#755#0#PHP" expanded="false" />
+                <element signature="e#757#922#0#PHP" expanded="false" />
+                <element signature="e#924#1119#0#PHP" expanded="false" />
                 <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
                 <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
                 <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
                 <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
                 <element signature="n#dblink#0;n#!!top" expanded="false" />
+                <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
                 <element signature="n#crearTablas#0;n#!!top" expanded="false" />
-                <marker date="1528688143433" expanded="true" signature="1122:1181" ph="SELECT datna... pg_database" />
-                <marker date="1528688143433" expanded="true" signature="1694:1798" ph="SELECT table... tables" />
-                <marker date="1528688143433" expanded="true" signature="3238:3318" ph="SELECT colum... columns" />
-                <marker date="1528688143433" expanded="true" signature="3238:3319" ph="SELECT colum... columns" />
-                <marker date="1528688143433" expanded="true" signature="3238:3325" ph="SELECT colum... columns" />
-                <marker date="1528688143433" expanded="true" signature="3888:3919" ph="CREATE TABLE... $" />
-                <marker date="1528688143433" expanded="true" signature="3888:3920" ph="SELECT colum... columns" />
+                <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+                <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+                <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+                <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+                <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+                <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+                <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+                <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+                <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+                <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+                <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+                <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+                <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
               </folding>
             </state>
           </provider>
@@ -86,9 +95,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -174,8 +183,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js.js" />
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/conn.php" />
+        <option value="$PROJECT_DIR$/preuba.php" />
         <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/prueba.html" />
+        <option value="$PROJECT_DIR$/conn.php" />
         <option value="$PROJECT_DIR$/method.js" />
       </list>
     </option>
@@ -194,7 +205,7 @@
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -207,7 +218,24 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ReplicacionDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ReplicacionDB" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -344,16 +372,18 @@
       <workItem from="1528669313560" duration="9064000" />
       <workItem from="1528683165608" duration="943000" />
       <workItem from="1528685756283" duration="6109000" />
+      <workItem from="1528730997356" duration="1802000" />
+      <workItem from="1528763136347" duration="11112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28433000" />
+    <option name="totallyTimeSpent" value="41347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -381,11 +411,78 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#select#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#select#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="127" column="3" lean-forward="true" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="3" />
+          <folding>
+            <element signature="e#7#135#0#PHP" expanded="false" />
+            <element signature="e#137#281#0#PHP" expanded="false" />
+            <element signature="e#283#429#0#PHP" expanded="false" />
+            <element signature="e#431#586#0#PHP" expanded="false" />
+            <element signature="e#588#755#0#PHP" expanded="false" />
+            <element signature="e#757#922#0#PHP" expanded="false" />
+            <element signature="e#924#1119#0#PHP" expanded="false" />
+            <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
+            <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
+            <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
+            <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
+            <element signature="n#dblink#0;n#!!top" expanded="false" />
+            <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
+            <element signature="n#crearTablas#0;n#!!top" expanded="false" />
+            <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+            <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+            <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+            <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+            <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+            <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+            <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+            <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+            <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/method.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3672">
+          <caret line="216" column="25" lean-forward="false" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
+            <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
+            <element signature="e#4166#4441#0" expanded="false" />
+            <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
+            <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
+            <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
+            <element signature="e#7087#8686#0" expanded="false" />
+            <element signature="n#!!block;n#crearTabla#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="901">
@@ -409,19 +506,29 @@
             <element signature="e#137#281#0#PHP" expanded="false" />
             <element signature="e#283#429#0#PHP" expanded="false" />
             <element signature="e#431#586#0#PHP" expanded="false" />
+            <element signature="e#588#755#0#PHP" expanded="false" />
+            <element signature="e#757#922#0#PHP" expanded="false" />
+            <element signature="e#924#1119#0#PHP" expanded="false" />
             <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
             <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
             <element signature="n#dblink#0;n#!!top" expanded="false" />
+            <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
             <element signature="n#crearTablas#0;n#!!top" expanded="false" />
-            <marker date="1528688143433" expanded="true" signature="1122:1181" ph="SELECT datna... pg_database" />
-            <marker date="1528688143433" expanded="true" signature="1694:1798" ph="SELECT table... tables" />
-            <marker date="1528688143433" expanded="true" signature="3238:3318" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3319" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3325" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3888:3919" ph="CREATE TABLE... $" />
-            <marker date="1528688143433" expanded="true" signature="3888:3920" ph="SELECT colum... columns" />
+            <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+            <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+            <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+            <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+            <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+            <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+            <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+            <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+            <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
           </folding>
         </state>
       </provider>
@@ -433,12 +540,11 @@
           <folding>
             <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
             <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
-            <element signature="n#!!block;n#conexionDBorigen#0" expanded="false" />
             <element signature="e#4166#4441#0" expanded="false" />
             <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
             <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
             <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
-            <element signature="e#7087#8341#0" expanded="false" />
+            <element signature="e#7087#8686#0" expanded="false" />
             <element signature="n#!!block;n#crearTabla#0" expanded="false" />
           </folding>
         </state>
@@ -465,12 +571,11 @@
           <folding>
             <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
             <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
-            <element signature="n#!!block;n#conexionDBorigen#0" expanded="false" />
             <element signature="e#4166#4441#0" expanded="false" />
             <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
             <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
             <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
-            <element signature="e#7087#8341#0" expanded="false" />
+            <element signature="e#7087#8686#0" expanded="false" />
             <element signature="n#!!block;n#crearTabla#0" expanded="false" />
           </folding>
         </state>
@@ -485,19 +590,29 @@
             <element signature="e#137#281#0#PHP" expanded="false" />
             <element signature="e#283#429#0#PHP" expanded="false" />
             <element signature="e#431#586#0#PHP" expanded="false" />
+            <element signature="e#588#755#0#PHP" expanded="false" />
+            <element signature="e#757#922#0#PHP" expanded="false" />
+            <element signature="e#924#1119#0#PHP" expanded="false" />
             <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
             <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
             <element signature="n#dblink#0;n#!!top" expanded="false" />
+            <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
             <element signature="n#crearTablas#0;n#!!top" expanded="false" />
-            <marker date="1528688143433" expanded="true" signature="1122:1181" ph="SELECT datna... pg_database" />
-            <marker date="1528688143433" expanded="true" signature="1694:1798" ph="SELECT table... tables" />
-            <marker date="1528688143433" expanded="true" signature="3238:3318" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3319" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3325" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3888:3919" ph="CREATE TABLE... $" />
-            <marker date="1528688143433" expanded="true" signature="3888:3920" ph="SELECT colum... columns" />
+            <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+            <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+            <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+            <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+            <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+            <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+            <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+            <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+            <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
           </folding>
         </state>
       </provider>
@@ -523,12 +638,11 @@
           <folding>
             <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
             <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
-            <element signature="n#!!block;n#conexionDBorigen#0" expanded="false" />
             <element signature="e#4166#4441#0" expanded="false" />
             <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
             <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
             <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
-            <element signature="e#7087#8341#0" expanded="false" />
+            <element signature="e#7087#8686#0" expanded="false" />
             <element signature="n#!!block;n#crearTabla#0" expanded="false" />
           </folding>
         </state>
@@ -543,19 +657,29 @@
             <element signature="e#137#281#0#PHP" expanded="false" />
             <element signature="e#283#429#0#PHP" expanded="false" />
             <element signature="e#431#586#0#PHP" expanded="false" />
+            <element signature="e#588#755#0#PHP" expanded="false" />
+            <element signature="e#757#922#0#PHP" expanded="false" />
+            <element signature="e#924#1119#0#PHP" expanded="false" />
             <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
             <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
             <element signature="n#dblink#0;n#!!top" expanded="false" />
+            <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
             <element signature="n#crearTablas#0;n#!!top" expanded="false" />
-            <marker date="1528688143433" expanded="true" signature="1122:1181" ph="SELECT datna... pg_database" />
-            <marker date="1528688143433" expanded="true" signature="1694:1798" ph="SELECT table... tables" />
-            <marker date="1528688143433" expanded="true" signature="3238:3318" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3319" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3325" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3888:3919" ph="CREATE TABLE... $" />
-            <marker date="1528688143433" expanded="true" signature="3888:3920" ph="SELECT colum... columns" />
+            <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+            <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+            <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+            <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+            <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+            <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+            <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+            <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+            <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
           </folding>
         </state>
       </provider>
@@ -581,12 +705,11 @@
           <folding>
             <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
             <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
-            <element signature="n#!!block;n#conexionDBorigen#0" expanded="false" />
             <element signature="e#4166#4441#0" expanded="false" />
             <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
             <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
             <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
-            <element signature="e#7087#8341#0" expanded="false" />
+            <element signature="e#7087#8686#0" expanded="false" />
             <element signature="n#!!block;n#crearTabla#0" expanded="false" />
           </folding>
         </state>
@@ -601,19 +724,29 @@
             <element signature="e#137#281#0#PHP" expanded="false" />
             <element signature="e#283#429#0#PHP" expanded="false" />
             <element signature="e#431#586#0#PHP" expanded="false" />
+            <element signature="e#588#755#0#PHP" expanded="false" />
+            <element signature="e#757#922#0#PHP" expanded="false" />
+            <element signature="e#924#1119#0#PHP" expanded="false" />
             <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
             <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
             <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
             <element signature="n#dblink#0;n#!!top" expanded="false" />
+            <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
             <element signature="n#crearTablas#0;n#!!top" expanded="false" />
-            <marker date="1528688143433" expanded="true" signature="1122:1181" ph="SELECT datna... pg_database" />
-            <marker date="1528688143433" expanded="true" signature="1694:1798" ph="SELECT table... tables" />
-            <marker date="1528688143433" expanded="true" signature="3238:3318" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3319" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3325" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3888:3919" ph="CREATE TABLE... $" />
-            <marker date="1528688143433" expanded="true" signature="3888:3920" ph="SELECT colum... columns" />
+            <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+            <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+            <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+            <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+            <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+            <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+            <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+            <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+            <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
           </folding>
         </state>
       </provider>
@@ -625,36 +758,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conn.php">
+    <entry file="file://$PROJECT_DIR$/preuba.php" />
+    <entry file="file://$PROJECT_DIR$/prueba.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="127" column="3" lean-forward="true" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="3" />
-          <folding>
-            <element signature="e#7#135#0#PHP" expanded="false" />
-            <element signature="e#137#281#0#PHP" expanded="false" />
-            <element signature="e#283#429#0#PHP" expanded="false" />
-            <element signature="e#431#586#0#PHP" expanded="false" />
-            <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
-            <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
-            <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
-            <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
-            <element signature="n#dblink#0;n#!!top" expanded="false" />
-            <element signature="n#crearTablas#0;n#!!top" expanded="false" />
-            <marker date="1528688143433" expanded="true" signature="1122:1181" ph="SELECT datna... pg_database" />
-            <marker date="1528688143433" expanded="true" signature="1694:1798" ph="SELECT table... tables" />
-            <marker date="1528688143433" expanded="true" signature="3238:3318" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3319" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3238:3325" ph="SELECT colum... columns" />
-            <marker date="1528688143433" expanded="true" signature="3888:3919" ph="CREATE TABLE... $" />
-            <marker date="1528688143433" expanded="true" signature="3888:3920" ph="SELECT colum... columns" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="32" column="66" lean-forward="false" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        <state relative-caret-position="-119">
+          <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -667,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/method.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="216" column="25" lean-forward="false" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+        <state relative-caret-position="358">
+          <caret line="331" column="48" lean-forward="false" selection-start-line="331" selection-start-column="48" selection-end-line="331" selection-end-column="48" />
           <folding>
             <element signature="n#!!block;n#inputsIniciales#0" expanded="false" />
             <element signature="n#!!block;n#conexionOrigen#0" expanded="false" />
@@ -677,8 +793,43 @@
             <element signature="n#!!block;n#agregarOpcionSelect#0" expanded="false" />
             <element signature="n#!!block;n#conexionDestino#0" expanded="false" />
             <element signature="n#!!block;n#columnasTablas#0" expanded="false" />
-            <element signature="e#7087#8341#0" expanded="false" />
-            <element signature="n#!!block;n#crearTabla#0" expanded="false" />
+            <element signature="n#!!block;n#insertarDatosTabla#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="190" column="93" lean-forward="false" selection-start-line="190" selection-start-column="93" selection-end-line="190" selection-end-column="93" />
+          <folding>
+            <element signature="e#7#135#0#PHP" expanded="false" />
+            <element signature="e#137#281#0#PHP" expanded="false" />
+            <element signature="e#283#429#0#PHP" expanded="false" />
+            <element signature="e#431#586#0#PHP" expanded="false" />
+            <element signature="e#588#755#0#PHP" expanded="false" />
+            <element signature="e#757#922#0#PHP" expanded="false" />
+            <element signature="e#924#1119#0#PHP" expanded="false" />
+            <element signature="n#conectarOrigen#0;n#!!top" expanded="false" />
+            <element signature="n#seleccionDBorigen#0;n#!!top" expanded="false" />
+            <element signature="n#conexionDBorigen#0;n#!!top" expanded="false" />
+            <element signature="n#conexionDBdestino#0;n#!!top" expanded="false" />
+            <element signature="n#dblink#0;n#!!top" expanded="false" />
+            <element signature="n#columnasTablas#0;n#!!top" expanded="false" />
+            <element signature="n#crearTablas#0;n#!!top" expanded="false" />
+            <element signature="n#datosTabla#0;n#!!top" expanded="false" />
+            <element signature="n#insertarDatosTabla#0;n#!!top" expanded="false" />
+            <marker date="1528774328929" expanded="true" signature="1487:1546" ph="SELECT datna... pg_database" />
+            <marker date="1528774328929" expanded="true" signature="2059:2163" ph="SELECT table... tables" />
+            <marker date="1528774328929" expanded="true" signature="3603:3683" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3684" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="3603:3690" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4253:4284" ph="CREATE TABLE... $" />
+            <marker date="1528774328929" expanded="true" signature="4253:4285" ph="SELECT colum... columns" />
+            <marker date="1528774328929" expanded="true" signature="4777:4798" ph="select ${$co... " />
+            <marker date="1528774328929" expanded="true" signature="4777:4799" ph="select $ fro... personas" />
+            <marker date="1528774328929" expanded="true" signature="5383:5428" ph="INSERT INTO ${$tabla}... " />
+            <marker date="1528774328929" expanded="true" signature="5422:5428" ph="INSERT INTO ${$tabla}... " />
           </folding>
         </state>
       </provider>
