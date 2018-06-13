@@ -286,7 +286,13 @@ function crearTabla(tabla, columnas, values) {
                         text:  "Tabla: "+tabla,
                     });
 
-                    datosTabla(tabla, values);
+                    //proc almacenado asociado al triger para insertar
+                    crearGeneraInsertOrigen();
+
+                    //trigger ahace proc y tabla
+                    tablasDBorigen();
+
+                    //datosTabla(tabla, values);
 
                 }else{
                     swal({
@@ -385,3 +391,91 @@ function insertarDatosTabla(tabla, Values,values) {
     xhttp.open("GET", "conn.php?func=insertarDatosTabla()&usuario="+Dusuario+"&contraseña="+Dcontraseña+"&ip="+DIP+"&puerto="+Dpuerto+"&bd="+Ddb+"&tabla="+tabla.toString()+"&Values="+Values.toString()+"&values="+values.toString(), true);
     xhttp.send();
 }
+
+function crearGeneraInsertOrigen() {
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.statusText== "OK" && this.status == 200) {
+
+                }
+                else{console.log(this.statusText, this.status)}
+            }
+        };
+        //xhttp.open("GET", "conn.php?func=crearGeneraInsertOrigen()&contraseñaO="+Gcontraseña+"&ipO="+GIP+"&puertoO="+Gpuerto+"&bdO=" +Gdb+"contraseñaD="+Dcontraseña+"&ipD="+DIP+"&puertoD="+Dpuerto+"&bdD="+Ddb, true);
+
+        xhttp.open("GET", "conn.php?func=crearGeneraInsertOrigen()&contraseñaO="+Gcontraseña+"&ipO="+GIP+"&puertoO="+Gpuerto+"&bdO="+Gdb+"&bdD="+Ddb, true);
+        xhttp.send();
+}
+
+
+function tablasDBorigen(){
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                if(this.response.toString() != "error") {
+
+                        var json = this.response;
+                        var arr = JSON.parse(json);
+
+                        for (var i = 0; i < arr.length; i++){
+
+                            var obj = arr[i];
+                            for (var key in obj){
+
+                                var value = obj[key];
+
+                                creaTrigger(value.toString());
+                            }
+                        }
+
+                }else{
+                    swal({
+                        title: "Error de conexionOrigen!",
+                        text:  "Verifique los datos ingresados!",
+                        icon: "warning",
+                        button: "OK!",
+                    });
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=tablasDBorigen()&usuario="+Gusuario+"&contraseña="+Gcontraseña+"&ip="+GIP+"&puerto="+Gpuerto+"&bd="+Gdb, true);
+    xhttp.send();
+}
+
+function creaTrigger(tabla){
+
+    console.log(" trigger tablas origen");
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                if(this.response.toString() != "error") {
+
+                    console.log(this.response);
+
+                }else{
+                    swal({
+                        title: "Error de conexionOrigen!",
+                        text:  "Verifique los datos ingresados!",
+                        icon: "warning",
+                        button: "OK!",
+                    });
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=creaTrigger()&usuario=" + Gusuario + "&contraseña=" + Gcontraseña + "&ip=" + GIP + "&puerto=" + Gpuerto + "&bd=" + Gdb + "&tabla=" + tabla, true);
+    xhttp.send();}
