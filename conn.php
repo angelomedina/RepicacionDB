@@ -1,13 +1,16 @@
 <?php
 
+if ($_GET['func']=='insertarDatosTabla()') {
+    insertarDatosTabla($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla'],$_GET['Values'],$_GET['values']);
+}
+
 if ($_GET['func']=='conectarOrigen()')
 {
     conectarOrigen($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto']);
 }
 
-if ($_GET['func']=='conexionDBorigen()')
-{
-    conexionDBorigen($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd']);
+if ($_GET['func']=='conexionDBorigen()') {
+    conexionDBorigen($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['schema']);
 }
 
 if ($_GET['func']=='conexionDBdestino()')
@@ -30,11 +33,6 @@ if ($_GET['func']=='datosTabla()')
     datosTabla($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla'],$_GET['columnas']);
 }
 
-if ($_GET['func']=='insertarDatosTabla()')
-{
-    insertarDatosTabla($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla'],$_GET['Values'],$_GET['values']);
-}
-
 if ($_GET['func']=='crearGeneraInsertOrigen()')
 {
     //crearGeneraInsertOrigen($_GET['contraseñaO'],$_GET['ipO'],$_GET['puertoO'],$_GET['bdO'],$_GET['contraseñaD'],$_GET['ipD'],$_GET['puertoD'],$_GET['bdD']);
@@ -46,12 +44,19 @@ if ($_GET['func']=='creaTrigger()') {
     creaTrigger($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['tabla']);
 }
 
-if ($_GET['func']=='tablasDBorigen()')
-{
+if ($_GET['func']=='tablasDBorigen()') {
     tablasDBorigen($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd']);
 }
 
+if ($_GET['func']=='esquemasDB()') {
 
+    esquemasDB($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd']);
+}
+
+if ($_GET['func']=='crearSchema()') {
+
+    crearSchema($_GET['usuario'],$_GET['contraseña'],$_GET['ip'],$_GET['puerto'],$_GET['bd'],$_GET['schema']);
+}
 
 function conectarOrigen($usuario, $contraseña, $ip, $puerto){
     $dbname          = "postgres";
@@ -80,19 +85,19 @@ function seleccionDBorigen($conexion){
     }
 }
 
-function conexionDBorigen($usuario, $contraseña, $ip, $puerto, $bd){
+function conexionDBorigen($usuario, $contraseña, $ip, $puerto, $bd, $schema){
     $dbname          =  $bd;
     $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
 
     if( !$conexion) {
         echo "error";
     }else{
-        $sql = "SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE';";
+        $sql = "SELECT table_name FROM information_schema.tables WHERE table_schema=$schema ";
         $contests = pg_query( $conexion, $sql );
 
         if($contests ){
 
-            dblink($usuario, $contraseña, $ip, $puerto, $bd);
+            dblinkO($usuario, $contraseña, $ip, $puerto, $bd);
 
             $resultArray = pg_fetch_all($contests);
             echo json_encode($resultArray);
@@ -125,6 +130,22 @@ function conexionDBdestino($usuario, $contraseña, $ip, $puerto, $bd){
 }
 
 function dblink($usuario, $contraseña, $ip, $puerto, $bd){
+
+    $dbname          =  $bd;
+    $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
+
+    $sql = "CREATE EXTENSION IF NOT EXISTS  dblink;";
+    $contests = pg_query( $conexion, $sql );
+
+    if($contests ){
+        pg_close($conexion);
+
+    }else{
+        pg_close($conexion);
+    }
+};
+
+function dblinkO($usuario, $contraseña, $ip, $puerto, $bd){
 
     $dbname          =  $bd;
     $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
@@ -209,7 +230,7 @@ function datosTabla($usuario, $contraseña, $ip, $puerto, $bd,$tabla, $columnas)
 function insertarDatosTabla($usuario, $contraseña, $ip, $puerto, $bd,$tabla,$Values,$values){
 
     $dbname          =  $bd;
-    $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
+    $conexion        =  pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
 
     if( !$conexion) {
         echo "error";
@@ -343,5 +364,50 @@ function createReplaceTrigger($conexion,$tabla,$triger){
     }else{
         echo "error insertar trigger";
         pg_close($conexion);
+    }
+}
+
+function esquemasDB($usuario, $contraseña, $ip, $puerto, $bd){
+
+    $dbname          =  $bd;
+    $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
+
+    if( !$conexion) {
+        echo "error";
+    }else{
+        $sql = "select nspname from pg_catalog.pg_namespace where nspname != 'pg_toast' and nspname != 'pg_temp_1' and nspname != 'pg_toast_temp_1' and nspname != 'pg_catalog' and nspname !=  'information_schema'";
+        $contests = pg_query( $conexion, $sql );
+
+        if($contests ){
+
+            $resultArray = pg_fetch_all($contests);
+            echo json_encode($resultArray);
+            pg_close($conexion);
+
+        }else{
+            echo "error";
+        }
+    }
+}
+
+function crearSchema($usuario, $contraseña, $ip, $puerto, $bd,$schema){
+
+    $dbname          =  $bd;
+    $conexion        =  @pg_connect("host=$ip port=$puerto dbname=$dbname user=$usuario password=$contraseña");
+
+    if( !$conexion) {
+        echo "error";
+    }else{
+        $sql = "CREATE SCHEMA  IF NOT EXISTS  $schema;";
+        $contests = pg_query( $conexion, $sql );
+
+        if($contests ){
+
+            echo "exito schema creado";
+            pg_close($conexion);
+
+        }else{
+            echo "error";
+        }
     }
 }

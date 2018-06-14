@@ -18,7 +18,7 @@
 
 <!--login SQL-->
 <div class="card text-white bg-primary mb-3" style="max-width: 500rem;">
-    <br><br><label class="titulo-label">Postgres</label><br><br>
+    <br><label class="titulo-label">Postgres</label><br>
 </div>
 
 
@@ -75,12 +75,35 @@
 
             <a  target="_self" > <input class="btn btn-danger" type="submit" id="btn-db" value="Selecionar" onclick="conexionDBorigen()" /> </a><br><br><br>
 
+            <p>"C:\Program Files\PostgreSQL\9.6\data\pg_log"</p>
+            <input type="file" id="myFile">
+            <hr>
+            <textarea style="width:400px;height: 200px" id="output"></textarea>
+
+            <script>
+                var input = document.getElementById("myFile");
+                var output = document.getElementById("output");
+
+                input.addEventListener("change", function () {
+                        if (this.files && this.files[0]) {
+                            var myFile = this.files[0];
+                            var reader = new FileReader();
+
+                            reader.addEventListener('load', function (e) {
+                                output.textContent = e.target.result;
+                            });
+
+                            reader.readAsBinaryString(myFile);
+                        }
+                    });
+
+            </script>
 
         </div>
     </div>
     <div class="card">
         <div class="card-header">
-            <label class="titulo-label-2">Destino</label><br><br><br>
+            <label class="titulo-label-2">Destino</label><br><br>
         </div>
         <div class="card-body">
 

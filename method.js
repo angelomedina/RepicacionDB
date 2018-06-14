@@ -1,4 +1,5 @@
-var tablas = [];
+var tablas  = [];
+var schemas = [];
 
 //conexiones de origen
 var Gusuario     ="";
@@ -94,8 +95,28 @@ function conexionOrigen() {
 function conexionDBorigen(){
 
     tablas          = [];
+    schemas         = [];
+    
     var bd          = document.getElementById('select-bd-postgres').value;
     var replicacion = document.getElementById('select-replicar').value;
+
+    Gdb  = bd.toString();
+    tipo = replicacion.toString();
+
+    esquemasDBOrigen();
+
+    swal({
+        title: "Conexion exitosa!",
+        icon: "success",
+        button: "OK",
+    });
+
+    document.getElementById('baseD').value = Gdb;
+
+
+}
+
+function tablasSchemaDBOrigen(schema) {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -103,50 +124,31 @@ function conexionDBorigen(){
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
 
-                if(this.response.toString() != "error") {
+                if(this.response.toString() != 'false'){
 
-                    swal({
-                        title: "Conexion exitosa!",
-                        text:  bd,
-                        icon: "success",
-                        button: "OK",
-                    }).then((value) => {
+                    var json = this.response;
+                    var arr = JSON.parse(json);
 
-                        $("#baseD").val(bd.toString());
+                    for (var i = 0; i < arr.length; i++){
 
-                        var json = this.response;
-                        var arr = JSON.parse(json);
+                        var obj = arr[i];
+                        for (var key in obj){
 
-                        for (var i = 0; i < arr.length; i++){
+                            var value = obj[key];
 
-                            var obj = arr[i];
-                            for (var key in obj){
+                            console.log("Schema: "+schema+" tabla "+value.toString());
+                            tablas.push(value.toString());
 
-                                var value = obj[key];
-
-                                tablas.push(value.toString());
-                            }
                         }
-                        Gdb  = bd.toString();
-                        tipo = replicacion.toString();
-                    });
+                    }
 
-                }else{
-                    swal({
-                        title: "Error de conexionOrigen!",
-                        text:  "Verifique los datos ingresados!",
-                        icon: "warning",
-                        button: "OK!",
-                    });
                 }
             }
             else{console.log(this.statusText, this.status)}
         }
     };
-    xhttp.open("GET", "conn.php?func=conexionDBorigen()&usuario="+Gusuario+"&contraseña="+Gcontraseña+"&ip="+GIP+"&puerto="+Gpuerto+"&bd="+bd, true);
+    xhttp.open("GET", "conn.php?func=conexionDBorigen()&usuario=" + Gusuario + "&contraseña=" + Gcontraseña + "&ip=" + GIP + "&puerto=" + Gpuerto + "&bd=" + Gdb + "&schema=" + schema, true);
     xhttp.send();
-
-
 
 }
 
@@ -160,6 +162,9 @@ function agregarOpcionSelect(domElement, array) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 function conexionDestino() {
 
@@ -193,7 +198,7 @@ function conexionDestino() {
 
                         agregarOpcionSelect("select-bd-postgres", db.toString());
 
-                        columnasTablas();
+                        replicacion();
 
                     });
                 }else{
@@ -210,7 +215,6 @@ function conexionDestino() {
     };
     xhttp.open("GET", "conn.php?func=conexionDBdestino()&usuario="+Dusuario+"&contraseña="+Dcontraseña+"&ip="+DIP+"&puerto="+Dpuerto+"&bd="+Ddb, true);
     xhttp.send();
-
 
 }
 
@@ -259,6 +263,8 @@ function columnasTablas(){
                         values = values.substring(0,values.length-1);
 
                         crearTabla(tabla, columnas,values);
+
+                        console.log("estructura tabla");
                     }
                     else{console.log(this.statusText, this.status)}
                 }
@@ -272,6 +278,8 @@ function columnasTablas(){
 }
 
 function crearTabla(tabla, columnas, values) {
+
+    console.log("creacion de tabla");
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -292,7 +300,8 @@ function crearTabla(tabla, columnas, values) {
                     //trigger ahace proc y tabla
                     tablasDBorigen();
 
-                    //datosTabla(tabla, values);
+                    //replica tablas
+                    datosTabla(tabla, values);
 
                 }else{
                     swal({
@@ -311,6 +320,7 @@ function crearTabla(tabla, columnas, values) {
 }
 
 function datosTabla(tabla, Values) {
+
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -344,6 +354,8 @@ function datosTabla(tabla, Values) {
 
                             insertarDatosTabla(tabla,Values ,values);
 
+                            console.log("replicacion de tablas");
+
                             values = "";
                         }
                     }
@@ -365,6 +377,9 @@ function datosTabla(tabla, Values) {
 }
 
 function insertarDatosTabla(tabla, Values,values) {
+
+
+    console.log("insertar datos");
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -400,16 +415,14 @@ function crearGeneraInsertOrigen() {
             if (this.readyState == 4 && this.status == 200) {
                 if(this.statusText== "OK" && this.status == 200) {
 
+                    console.log(this.response);
                 }
                 else{console.log(this.statusText, this.status)}
             }
         };
-        //xhttp.open("GET", "conn.php?func=crearGeneraInsertOrigen()&contraseñaO="+Gcontraseña+"&ipO="+GIP+"&puertoO="+Gpuerto+"&bdO=" +Gdb+"contraseñaD="+Dcontraseña+"&ipD="+DIP+"&puertoD="+Dpuerto+"&bdD="+Ddb, true);
-
         xhttp.open("GET", "conn.php?func=crearGeneraInsertOrigen()&contraseñaO="+Gcontraseña+"&ipO="+GIP+"&puertoO="+Gpuerto+"&bdO="+Gdb+"&bdD="+Ddb, true);
         xhttp.send();
 }
-
 
 function tablasDBorigen(){
 
@@ -453,8 +466,6 @@ function tablasDBorigen(){
 
 function creaTrigger(tabla){
 
-    console.log(" trigger tablas origen");
-
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
 
@@ -478,4 +489,97 @@ function creaTrigger(tabla){
         }
     };
     xhttp.open("GET", "conn.php?func=creaTrigger()&usuario=" + Gusuario + "&contraseña=" + Gcontraseña + "&ip=" + GIP + "&puerto=" + Gpuerto + "&bd=" + Gdb + "&tabla=" + tabla, true);
-    xhttp.send();}
+    xhttp.send();
+}
+
+function esquemasDBOrigen() {
+
+    schemas = [];
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                if(this.response.toString() != "error") {
+
+                    var json = this.response;
+                    var arr = JSON.parse(json);
+
+                    for (var i = 0; i < arr.length; i++){
+
+                        var obj = arr[i];
+                        for (var key in obj){
+
+                            var value = obj[key];
+
+                            schemas.push(value.toString());
+
+                            tablasSchemaDBOrigen(  "'" + value.toString() + "'" );
+
+                        }
+                    }
+
+                }else{
+                    swal({
+                        title: "Error de conexion Origen!",
+                        text:  "Verifique los datos ingresados!",
+                        icon:  "warning",
+                        button: "OK!",
+                    });
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=esquemasDB()&usuario=" + Gusuario + "&contraseña=" + Gcontraseña + "&ip=" + GIP + "&puerto=" + Gpuerto + "&bd=" + Gdb, true);
+    xhttp.send();
+
+}
+
+function creaSchema() {
+
+        schemas.forEach(function (elemento) {
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+
+                    if (this.readyState == 4 && this.status == 200) {
+                        if(this.statusText== "OK" && this.status == 200) {
+
+                            console.log(this.response);
+                        }
+                        else{console.log(this.statusText, this.status)}
+                    }
+                };
+                xhttp.open("GET", "conn.php?func=crearSchema()&usuario=" + Dusuario + "&contraseña=" + Dcontraseña + "&ip=" + DIP + "&puerto=" + Dpuerto + "&bd=" + Ddb + "&schema=" + elemento, true);
+                xhttp.send();
+
+            });
+}
+
+
+function replicacion() {
+
+    creaSchema();
+
+     swal({
+     title:  "Replicacion de schemas!",
+     text:   "Se replicaran "+schemas.length+" schemas",
+     icon:   "success",
+     button: "OK",
+
+     }).then((value) => {
+
+         columnasTablas();
+
+    });
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
